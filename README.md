@@ -74,7 +74,7 @@ and add a script to your package.json like this:
 
 ## Release History
 
-Checkout [CHANGELOG.md](CHANGELOG.md) file for release history.
+Checkout [CHANGELOG.md](https://github.com/omarkhatibco/adonis-nextjs/blob/master/CHANGELOG.md) file for release history.
 
 ## Meta
 
