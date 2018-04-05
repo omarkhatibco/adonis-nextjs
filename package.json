@@ -1,0 +1,11 @@
+{
+  "name": "adonis-nextjs",
+  "version": "1.0.0",
+  "author": "Omar Khatib",
+  "license": "MIT",
+  "description": "A provider to initialize nextjs app with adonis.",
+  "bugs": {
+    "url": "https://github.com/omarkhatibco/adonis-nextjs/issues"
+  },
+  "homepage": "https://github.com/omarkhatibco/adonis-nextjs#readme"
+}
