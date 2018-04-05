@@ -21,7 +21,7 @@ Register it in `bootstrap/app.js`:
 ```javascript
 const providers = [
   ...
-  'adonis-nextjs/providers/NextProvider.js
+  'adonis-nextjs/providers/NextProvider.js'
 ]
 ```
 
@@ -75,7 +75,7 @@ and add a script to your package.json like this:
 }
 ```
 
-## Release Histor
+## Release History
 
 Checkout [CHANGELOG.md](CHANGELOG.md) file for release history.
 
@@ -85,6 +85,6 @@ Checkout [CHANGELOG.md](CHANGELOG.md) file for release history.
 
 [@nextjs](https://github.com/zeit/next.js/)
 
-Checkout [LICENSE.txt](LICENSE.txt) for license information
+Checkout [LICENSE](LICENSE) for license information
 
 [npm-url]: https://npmjs.org/package/omarkhatibco/adonis-nextjs
