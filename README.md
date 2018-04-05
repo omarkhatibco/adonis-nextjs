@@ -2,7 +2,7 @@
 
 > A provider to initialize nextjs app with adonis.
 
-[![NPM Version][npm-image]][npm-url]
+[![npm](https://img.shields.io/npm/v/adonis-nextjs.svg)](https://www.npmjs.com/package/adonis-nextjs)
 
 ## Installation
 
@@ -19,10 +19,7 @@ npm i --save adonis-next
 Register it in `bootstrap/app.js`:
 
 ```javascript
-const providers = [
-  ...
-  'adonis-nextjs/providers/NextProvider.js'
-]
+const providers = [..."adonis-nextjs/providers/NextProvider.js"];
 ```
 
 then use it in your Router in `start/routes.js`:
@@ -58,9 +55,9 @@ Route.get("*", ({ request, response }) => {
 });
 ```
 
-## next.js Changes that you should do
+## Next.js Changes that you should do
 
-* The `next.config.js` file must be in `config/nexr.js`.
+* The `next.config.js` file must be in `config/next.js`.
 * The next project directory must be `resources`.
 
 and add a script to your package.json like this:
@@ -85,6 +82,4 @@ Checkout [CHANGELOG.md](CHANGELOG.md) file for release history.
 
 [@nextjs](https://github.com/zeit/next.js/)
 
-Checkout [LICENSE](LICENSE) for license information
-
-[npm-url]: https://npmjs.org/package/omarkhatibco/adonis-nextjs
+Checkout [LICENSE](LICENSE) for license information.
