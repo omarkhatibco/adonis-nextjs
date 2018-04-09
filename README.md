@@ -12,6 +12,8 @@ this provider assume you have nextjs, React & React Dom
 
 ```bash
 npm i --save adonis-next
+// yarn
+yarn add adonis-next
 ```
 
 ## Configure
@@ -19,39 +21,44 @@ npm i --save adonis-next
 Register it in `bootstrap/app.js`:
 
 ```javascript
-const providers = [..."adonis-nextjs/providers/NextProvider.js"];
+const providers = [...'adonis-nextjs/providers/NextProvider.js'];
+const commands = [...'adonis-nextjs/Commands/NextBuilder'];
 ```
 
 then use it in your Router in `start/routes.js`:
 
 ```javascript
-const Route = use("Route");
-const Next = use("Adonis/Addons/Next");
-const handle = Next.getRequestHandler();
+const Route = use('Route');
+const Next = use('Adonis/Addons/Next');
+const handler = Next.getRequestHandler();
 
 // API Endpoint for your database
-Route.get("/api", ({ request }) => {
+Route.get('/api', ({ request }) => {
   return { greeting: "I'm Api Endpoint" };
 });
 
 // // Your Next.js app
 
-Route.get("/a", ({ request, response }) => {
-  return Next.render(request.request, response.response, "/b", request.request.query);
+Route.get('/a', ({ request, response }) => {
+  return Next.render(request.request, response.response, '/b', request.request.query);
 });
 
-Route.get("/b", ({ request, response }) => {
-  return Next.render(request.request, response.response, "/a", request.request.query);
+Route.get('/b', ({ request, response }) => {
+  return Next.render(request.request, response.response, '/a', request.request.query);
 });
 
-Route.get("/posts/:id", ({ request, response }) => {
-  return Next.render(request.request, response.response, "/posts", {
+Route.get('/posts/:id', ({ request, response }) => {
+  return Next.render(request.request, response.response, '/posts', {
     id: request.request.params.id
   });
 });
 
-Route.get("*", ({ request, response }) => {
-  return handle(request.request, response.response);
+Route.get('*', ({ request, response }) => {
+  new Promise((resolve, reject) => {
+      handler(request.request, response.response, promise => {
+        promise.then(resolve).catch(reject);
+      });
+    }),
 });
 ```
 
@@ -66,8 +73,8 @@ and add a script to your package.json like this:
 {
   "scripts": {
     "dev": "node server.js",
-    "build": "next  build ./resources",
-    "start": "cross-env NODE_ENV=production node server.js"
+    "build": "node ace nextBuild",
+    "start": "NODE_ENV=production node server.js"
   }
 }
 ```
