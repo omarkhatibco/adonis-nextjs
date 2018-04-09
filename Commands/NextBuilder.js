@@ -19,7 +19,7 @@ class NextBuilder extends Command {
 
     this.info('Building next.js application...');
     await nextBuild(dir, conf);
-    this.info('done...');
+    process.exit(0);
   }
 }
 
