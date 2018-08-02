@@ -1,19 +1,3 @@
-# Adonis Nextjs 🚀
-
-> A provider to initialize nextjs app with adonis.
-
-[![npm](https://img.shields.io/npm/v/adonis-nextjs.svg)](https://www.npmjs.com/package/adonis-nextjs)
-
-## Installation
-
-You can install the package from npm.
-
-this provider assume you have nextjs, React & React Dom
-
-```bash
-adonis install adonis-nextjs
-```
-
 ## Configure
 
 ### Register provider
@@ -75,15 +59,3 @@ The next project directory must be `src`.
   }
 }
 ```
-
-## Release History
-
-Checkout [CHANGELOG.md](https://github.com/omarkhatibco/adonis-nextjs/blob/master/CHANGELOG.md) file for release history.
-
-## Meta
-
-[@AdonisJs](http://adonisjs.com/)
-
-[@nextjs](https://github.com/zeit/next.js/)
-
-Checkout [LICENSE](https://github.com/omarkhatibco/adonis-nextjs/blob/master/LICENSE) for license information.

@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 /**
  * adonis-nextjs-provider
@@ -9,8 +9,8 @@
  * file that was distributed with this source code.
  */
 
-const next = require("next");
-const { ServiceProvider } = require("@adonisjs/fold");
+const next = require('next');
+const { ServiceProvider } = require('@adonisjs/fold');
 
 class NextProvider extends ServiceProvider {
   /**
@@ -21,15 +21,14 @@ class NextProvider extends ServiceProvider {
    * @return {void}
    */
   async register() {
-    this.app.singleton("Adonis/Addons/Next", app => {
-      const dev = app.use("Adonis/Src/Env").get("NODE_ENV") === "development";
-      const dir = app.use("Adonis/Src/Helpers").resourcesPath();
-      const conf = app.use("Adonis/Src/Config").get("next");
-      const Nextapp = next({ dev, dir, conf });
+    this.app.singleton('Adonis/Addons/Next', app => {
+      const dev = process.env.NODE_ENV !== 'production';
+      const dir = app.use('Adonis/Src/Helpers').appRoot('src');
+      const Nextapp = next({ dev, dir });
       Nextapp.prepare();
       return Nextapp;
     });
-    this.app.alias("Adonis/Addons/Next", "Next");
+    this.app.alias('Adonis/Addons/Next', 'Next');
   }
 }
 
