@@ -17,45 +17,45 @@ const handler = Next.getRequestHandler();
 
 // API Endpoint for your database
 Route.get('/api', ({ request }) => {
-  return { greeting: "I'm Api Endpoint" };
+	return { greeting: "I'm Api Endpoint" };
 });
 
 // * Next Routes
 Route.get('/b', ({ request, response }) => {
-  const query = request.get();
-  return Next.render(request.request, response.response, '/b', query);
+	const query = request.get();
+	return Next.render(request.request, response.response, '/b', query);
 });
 
 Route.get('/post/:id', ({ request, response, params }) =>
-  Next.render(request.request, response.response, '/b', {
-    id: params.id
-  })
+	Next.render(request.request, response.response, '/b', {
+		id: params.id
+	})
 );
 
 Route.get(
-  '*',
-  ({ request, response }) =>
-    new Promise((resolve, reject) => {
-      handler(request.request, response.response, promise => {
-        promise.then(resolve).catch(reject);
-      });
-    })
+	'*',
+	({ request, response }) =>
+		new Promise((resolve, reject) => {
+			handler(request.request, response.response, promise => {
+				promise.then(resolve).catch(reject);
+			});
+		})
 );
 ```
 
 ## Adding next.js folder
 
-The next project directory must be `src`.
+The next project directory is `next` by default, but you can change it using environment variables `NEXT_FOLDER`.
 
 ## Register next.js Commands
 
 ```json
 {
-  "scripts": {
-    "dev": "node server.js",
-    "build": "next build ./src",
-    "export": "next export ./src",
-    "start": "NODE_ENV=production node server.js"
-  }
+	"scripts": {
+		"dev": "node server.js",
+		"build": "next build ./next",
+		"export": "next export ./next",
+		"start": "NODE_ENV=production node server.js"
+	}
 }
 ```
