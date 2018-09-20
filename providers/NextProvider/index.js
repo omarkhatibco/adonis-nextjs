@@ -55,7 +55,8 @@ class NextProvider extends ServiceProvider {
 		if (Helpers.isAceCommand() && this.getFirstArg().includes('migration')) {
 			return;
 		}
-		Next.prepare();
+		
+		await Next.prepare();
 	}
 }
 
