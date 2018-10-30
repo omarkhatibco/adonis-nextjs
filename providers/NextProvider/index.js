@@ -52,7 +52,7 @@ class NextProvider extends ServiceProvider {
 		const Helpers = this.app.use('Adonis/Src/Helpers');
 		const Next = this.app.use('Next');
 
-		if (Helpers.isAceCommand() && this.getFirstArg().includes('migration')) {
+		if (Helpers.isAceCommand() && !this.getFirstArg().includes('serve')) {
 			return;
 		}
 		
