@@ -1,6 +1,6 @@
 {
 	"name": "adonis-nextjs",
-	"version": "3.1.0",
+	"version": "3.1.1",
 	"author": "Omar Khatib",
 	"license": "MIT",
 	"description": "A provider to initialize nextjs app with adonis.",
