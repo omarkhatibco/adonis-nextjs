@@ -11,5 +11,8 @@
 	"keywords": [
 		"adonis-framework",
 		"next"
-	]
+	],
+	"publishConfig": {
+		"registry": "https://npm.pkg.github.com/@omarkhatibco"
+	}
 }
