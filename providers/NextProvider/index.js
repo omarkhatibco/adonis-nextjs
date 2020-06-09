@@ -55,8 +55,9 @@ class NextProvider extends ServiceProvider {
 		if (Helpers.isAceCommand() && !this.getFirstArg().includes('serve')) {
 			return;
 		}
-		
+
 		await Next.prepare();
+		require('../../src/ContextBindings')(Next, this.app.use('Adonis/Src/HttpContext'))
 	}
 }
 
